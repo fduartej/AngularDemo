@@ -8,25 +8,38 @@
           {{pageTitle}}
   </div>
   <div class='panel-body'>
-          <div class='row'>
-              <div class='col-md-2'>Name:</div>
-              <div class='col-md-4'><input type='text'  /></div>
-          </div>
-          <div class='row'>
-              <div class='col-md-2'>Phone:</div>
-              <div class='col-md-4'><input type='text'  /></div>
-          </div>
-          <div class='row'>
-              <div class='col-md-2'>Email:</div>
-              <div class='col-md-4'><input type='text'  /></div>
-          </div>
-          <div class="row">
-             <div class='col-md-2'></div>
-             <div class='col-md-4'>
-                        <button class='btn btn-primary'>
-                                Enviar
-                            </button>
-             </div>
-          </div>
+        <form #contactForm="ngForm" (ngSubmit)="createContact(contactForm)" novalidate>
+            <input type="text" id="name" class="form-control" placeholder="Escriba su  nombre..." 
+               required name="name" [(ngModel)]="newContact.name"
+               #name="ngModel" >
+            <div *ngIf="name.errors && name.dirty"
+                 class="alert alert-danger">
+                <div [hidden]="!name.errors.required">
+                    Name is required.
+                </div>
+            </div>
+
+            <input type="text" id="email" class="form-control" placeholder="Escriba su  Correo..." 
+               required name="email" [(ngModel)]="newContact.email"
+               #email="ngModel" >
+            <div *ngIf="email.errors && email.dirty"
+                class="alert alert-danger">
+                <div [hidden]="!email.errors.required">
+                    Correo is required.
+                </div>
+            </div>
+
+            <input type="text" id="phone" class="form-control" placeholder="Escriba su  Foro..." 
+               required name="phone" [(ngModel)]="newContact.phone"
+               #email="ngModel" >
+            <div *ngIf="phone.errors && phone.dirty"
+                class="alert alert-danger">
+                <div [hidden]="!phone.errors.required">
+                    Fono is required.
+                </div>
+            </div>
+
+        </form>
   </div>
 </div>
+

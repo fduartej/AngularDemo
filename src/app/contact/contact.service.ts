@@ -16,7 +16,7 @@ export class ContactService {
             .catch(this.handleError);
     }
 
-    createCliente(contactData: Contact): Promise<Contact> {
+    createContact(contactData: Contact): Promise<Contact> {
         return this.http.post(this.baseUrl + '/api/contacts/', contactData)
             .toPromise().then(response => response.json() as Contact)
             .catch(this.handleError);
