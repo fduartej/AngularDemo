@@ -7,6 +7,7 @@ import { AppComponent } from './app.component';
 import { WelcomeComponent } from './home/welcome.component';
 import { ProductModule } from './products/product.module';
 import { ContactComponent } from './contact/contact.component';
+import { ContactService } from './contact/contact.service';
 
 @NgModule({
   declarations: [
@@ -25,6 +26,7 @@ import { ContactComponent } from './contact/contact.component';
     ]),
     ProductModule
   ],
+  providers: [ContactService], 
   bootstrap: [AppComponent]
 })
 export class AppModule { }

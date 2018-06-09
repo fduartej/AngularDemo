@@ -10,10 +10,10 @@ import { NgForm } from '@angular/forms';
   styleUrls: ['./contact.component.css']
 })
 export class ContactComponent implements OnInit {
-
-    pageTitle: string = 'Contact';
     contacts: Contact[];
-	  newContact: Contact = new Contact();
+	newContact: Contact = new Contact();
+
+    pageTitle: string = 'Titulo';
     
   	constructor(
  		  private contactService: ContactService,
