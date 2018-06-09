@@ -3,43 +3,35 @@
 </p>
 
 
-<div class='panel panel-primary'>
-  <div class='panel-heading'>
-          {{pageTitle}}
-  </div>
-  <div class='panel-body'>
-        <form #contactForm="ngForm" (ngSubmit)="createContact(contactForm)" novalidate>
-            <input type="text" id="name" class="form-control" placeholder="Escriba su  nombre..." 
-               required name="name" [(ngModel)]="newContact.name"
-               #name="ngModel" >
-            <div *ngIf="name.errors && name.dirty"
-                 class="alert alert-danger">
-                <div [hidden]="!name.errors.required">
-                    Name is required.
-                </div>
-            </div>
-
-            <input type="text" id="email" class="form-control" placeholder="Escriba su  Correo..." 
-               required name="email" [(ngModel)]="newContact.email"
-               #email="ngModel" >
-            <div *ngIf="email.errors && email.dirty"
-                class="alert alert-danger">
-                <div [hidden]="!email.errors.required">
-                    Correo is required.
-                </div>
-            </div>
-
-            <input type="text" id="phone" class="form-control" placeholder="Escriba su  Foro..." 
-               required name="phone" [(ngModel)]="newContact.phone"
-               #email="ngModel" >
-            <div *ngIf="phone.errors && phone.dirty"
-                class="alert alert-danger">
-                <div [hidden]="!phone.errors.required">
-                    Fono is required.
-                </div>
-            </div>
-
-        </form>
-  </div>
+<div class="container">
+    <h1>Contact</h1>
+    <form #contactForm="ngForm" (ngSubmit)="createContact(clienteForm)">
+      <div class="form-group">
+        <label for="name">Name</label>
+        <input type="text" class="form-control" id="name" required
+               name="name" [(ngModel)]="newContact.name"
+               #name="ngModel" 
+        >
+      </div>
+ 
+      <div class="form-group">
+        <label for="email">Email</label>
+        <input type="text" class="form-control" id="email"
+               name="email" [(ngModel)]="newContact.email"
+               #email="ngModel" 
+        >
+      </div>
+ 
+		<div class="form-group">
+        <label for="phone">Phone</label>
+        <input type="text" class="form-control" id="phone"
+               name="phone" [(ngModel)]="newContact.phone"
+               #phone="ngModel" 
+        
+        >
+      </div>
+ 
+      <button type="submit" class="btn btn-success">Submit</button>
+ 
+    </form>
 </div>
-

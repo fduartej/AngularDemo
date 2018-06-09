@@ -11,7 +11,7 @@ import { NgForm } from '@angular/forms';
 })
 export class ContactComponent implements OnInit {
     contacts: Contact[];
-	newContact: Contact = new Contact();
+	  newContact: Contact = new Contact();
 
     pageTitle: string = 'Titulo';
     

@@ -1,7 +1,9 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
+import { HttpModule } from '@angular/http';
 import { RouterModule } from '@angular/router';
+import { FormsModule }   from '@angular/forms';
 
 import { AppComponent } from './app.component';
 import { WelcomeComponent } from './home/welcome.component';
@@ -17,7 +19,9 @@ import { ContactService } from './contact/contact.service';
   ],
   imports: [
     BrowserModule,
+    FormsModule,
     HttpClientModule,
+    HttpModule,
     RouterModule.forRoot([
         { path: 'welcome', component: WelcomeComponent },
         { path: 'contact', component: ContactComponent },
